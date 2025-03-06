@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question Based - First Pick</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      h4 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 8px;
+      }
+
+      #question {
+        font-style: italic;
+      }
+      #question-container {
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand header" href="index.html">
+          <h3 class="mb-0">FIRST PICK</h3>
+          <img
+            src="image/logo.gif"
+            alt="Logo First Pick"
+            style="vertical-align: middle; margin-right: 5px; height: 26px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="number.html">Scelta numerica</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="screen.html">Tocca schermo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h4 class="mt-5 mb-4 text-center text-white">
+        Un rapido quiz per determinare il primo giocatore
+      </h4>
+
+      <div id="question-container" class="container text-center">
+        <span id="question" class="text-white">Caricamento domanda...</span>
+      </div>
+      <br />
+      <div class="d-grid gap-2 d-md-block text-center">
+        <button class="btn btn-secondary" onclick="displayQuestion()">Nuova domanda</button>
+      </div>
+    </div>
+    <script>
+      const questions = [
+        "Chi ha preso l'aereo più di recente?",
+        "Chi ha il telefono più carico?",
+        "Chi ha bevuto l'ultimo caffè?",
+        "Chi ha mangiato la pizza più di recente?",
+        "Chi ha dormito di più?",
+        "Chi ha la barba più lunga?",
+        "Chi indossa le scarpe più nuove?",
+        "Chi ha parcheggiato più lontano?",
+        "Chi mangia più velocemente?",
+        "Chi ha riso per ultimo?",
+        "Chi ha meno capelli?",
+        "Chi ha la borsa più pesante?",
+        "Chi ha il portafoglio più pieno?",
+        "Chi porta gli occhiali?",
+        "Chi ha i capelli più lunghi?",
+        "Chi ha il nome più corto?",
+        "Chi ha il nome più lungo?",
+        "Chi è arrivato per primo?",
+        "Chi è arrivato per ultimo?",
+        "Chi è il più affamato?",
+        "Chi si stanca facilmente?",
+        "Chi ha più energia?",
+        "Chi è il più veloce?",
+        "Chi ha letto un libro di recente?",
+        "Chi ha comprato qualcosa di recente?",
+        "Chi ha cucinato per ultimo?",
+        "Chi ha lavato i piatti per ultimo?",
+        "Chi è andato a fare la spesa per ultimo?",
+        "Chi ha guidato più a lungo oggi?",
+        "Chi spende molto tempo al telefono?",
+        "Chi ha controllato la posta elettronica per ultimo?",
+        "Chi ha il numero di telefono più facile da ricordare?",
+        "Chi ha più notifiche sul telefono?",
+        "Chi ha meno batteria sul telefono?",
+        "Chi beve di più?",
+        "Chi ha più follower sui social media?",
+        "Chi ha meno follower sui social media?",
+        "Chi ha pubblicato qualcosa di recente?",
+        "Chi ha spento la sveglia per ultimo?",
+        "Chi ha fatto la doccia più di recente?",
+        "Chi ha aperto l'ultima bottiglia?",
+        "Chi ha la cover per telefono più strana?",
+        "Chi ha risposto per primo a questa domanda?",
+        "Chi ha suggerito questo gioco?",
+        "Chi è il più giovane?",
+        "Chi è il più anziano?",
+        "Chi ha la voce più forte?",
+        "Chi ha la voce più dolce?",
+        "Chi ha il sorriso più contagioso?",
+        "Chi ha fatto la domanda più intelligente oggi?",
+        "Chi ha fatto l'errore più grande oggi?",
+        "Chi ha la memoria migliore?",
+        "Chi si veste più alla moda?",
+        "Chi ha la patente da meno tempo?",
+        "Chi ha la memoria peggiore?",
+        "Chi ha la patente da più tempo?",
+        "Chi ha l'auto più nuova?",
+        "Chi ha un accendino?",
+        "Chi ha le mani più fredde?",
+        "Chi ha le mani più calde?",
+        "Chi ha i calzini spaiati?",
+        "Chi ha un cappello?",
+        "Chi ha una sciarpa?",
+        "Chi ha il nome che inizia con la lettera più vicina a 'A'?",
+        "Chi ha il nome che inizia con la lettera più lontana da 'A'?",
+        "Chi ha le scarpe slacciate?",
+        "Chi è seduto più vicino alla porta?",
+        "Chi è seduto più lontano dalla porta?",
+        "Chi ha tossito per ultimo?",
+        "Chi ha sbadigliato per ultimo?",
+        "Chi ha la suoneria del telefono più originale?",
+        "Chi conosce più lingue?",
+        "Chi ha più fratelli?",
+        "Chi ha più sorelle?",
+        "Chi ha più animali domestici?",
+        "Chi ha cambiato lavoro di recente?",
+        "Chi si è trasferito di recente?",
+        "Chi ha fatto più sport oggi?",
+        "Chi si è lamentato di più oggi?",
+        "Chi ha fatto un complimento di recente?",
+        "Chi ha detto 'per favore' per ultimo?",
+        "Chi ha detto 'grazie' per ultimo?",
+        "Chi indossa lenti a contatto?",
+        "Chi indossa più trucco?",
+        "Chi ha più monete in tasca?",
+        "Chi ha la misura di scarpe più alta?",
+        "Chi ha la misura di scarpe più bassa?",
+        "Chi indossa qualcosa di rosso?",
+        "Chi è stato all'estero di recente?",
+        "Chi compie gli anni dopo?",
+        "Chi ha compiuto gli anni l'ultima volta?",
+        "Chi ha il cognome più corto?",
+        "Chi ha il cognome più lungo?",
+        "Chi ha il soprannome più strano?",
+      ];
+
+      const questionElement = document.getElementById("question");
+
+      function displayQuestion() {
+        let randomIndex = Math.floor(Math.random() * questions.length);
+        questionElement.textContent = questions[randomIndex];
+      }
+
+      displayQuestion();
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

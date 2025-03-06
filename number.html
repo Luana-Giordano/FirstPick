@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scelta numerica - First Pick</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+        background-color: #f8f9fa;
+        color: #343a40;
+        padding-top: 20px;
+      }
+
+      p {
+        color: #6c757d;
+      }
+
+      #pResult {
+        margin-top: 10px;
+        display: none;
+      }
+
+      #result {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand header" href="index.html">
+          <h3 class="mb-0">FIRST PICK</h3>
+          <img
+            src="image/logo.gif"
+            alt="Logo First Pick"
+            style="vertical-align: middle; margin-right: 5px; height: 26px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="question.html">Domanda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="screen.html">Tocca schermo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h4 class="mt-5 mb-4 text-center text-white">Quanti giocatori?</h4>
+
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <p class="text-white text-center">Inserisci numero (2-12):</p>
+        <input type="number" id="numberOfPlayersInput" class="form-control" min="2" max="15" />
+        <p id="pResult"></p>
+        <button type="button" class="btn btn-secondary btn-block" id="submitPlayersBtn">
+          Conferma
+        </button>
+
+        <button type="button" class="btn btn-secondary" id="resetBtn">Riprova</button>
+      </div>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      window.onload = function () {
+        const numberOfPlayersInput = document.getElementById("numberOfPlayersInput");
+        const submitPlayersBtn = document.getElementById("submitPlayersBtn");
+        const resultElement = document.getElementById("result");
+        const modalResult = document.getElementById("pResult");
+        const resetBtn = document.getElementById("resetBtn");
+
+        submitPlayersBtn.addEventListener("click", function () {
+          const numberOfPlayers = parseInt(numberOfPlayersInput.value);
+
+          if (numberOfPlayers === null || numberOfPlayers === "") {
+            resultElement.textContent = "Inserisci un numero!";
+            resultElement.className = "text-danger";
+            return;
+          }
+
+          if (isNaN(numberOfPlayers)) {
+            resultElement.textContent = "Inserisci un numero!";
+            resultElement.className = "text-danger";
+            return;
+          }
+
+          if (numberOfPlayers < 2 || numberOfPlayers > 12) {
+            resultElement.textContent = "Numeri validi: 2-12!";
+            resultElement.className = "text-danger";
+            return;
+          }
+
+          modalResult.textContent = "";
+          modalResult.className = "";
+          resultElement.classList.remove("text-danger");
+
+          const firstPlayer = Math.floor(Math.random() * numberOfPlayers) + 1;
+
+          resultElement.textContent = "Gioca per primo il n° " + firstPlayer + "!";
+        });
+
+        // Resetto i valori e il testo
+        resetBtn.addEventListener("click", function () {
+          numberOfPlayersInput.value = "";
+          resultElement.textContent = "";
+          modalResult.textContent = ""; //pulisco l'errore
+          modalResult.className = ""; //rimuovo la classe di errore
+        });
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

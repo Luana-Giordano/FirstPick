@@ -2,7 +2,7 @@
 
 ## Descrizione
 
-Condivido il percorso di sviluppo del progetto "First Pick", un'app web per la selezione casuale del primo giocatore, attraverso un approccio strutturato per milestone.
+Condivido il percorso di sviluppo del progetto `First Pick`, un'app web per la selezione casuale del primo giocatore, attraverso un approccio strutturato per milestone.
 Metto in evidenza anche gli strumenti che mi hanno aiutato a dare vita a questo progetto.
 
 ## 1° milestone - Struttura di Base e Prototipo HTML/CSS
@@ -13,9 +13,9 @@ Creazione della struttura HTML fondamentale e della stilizzazione di base con CS
 
 ### Risultati:
 
--   Struttura HTML con elementi principali (navbar, contenitori, pulsanti).
--   Stilizzazione di base con CSS per definire font, colori e layout.
--   Integrazione di Bootstrap 5 per la reattività e la gestione del layout.
+- Struttura HTML con elementi principali (navbar, contenitori, pulsanti).
+- Stilizzazione di base con CSS per definire font, colori e layout.
+- Integrazione di Bootstrap 5 per la reattività e la gestione del layout.
 
 ### Strumenti:
 
@@ -33,8 +33,8 @@ Implementazione della logica JavaScript per le prime due modalità di selezione:
 
 ### Risultati:
 
--  Funzionalità di input numerico con validazione dell'input.
--  Funzionalità di visualizzazione di domande casuali da un array.
+- Funzionalità di input numerico con validazione dell'input.
+- Funzionalità di visualizzazione di domande casuali da un array.
 
 ### Strumenti:
 
@@ -52,10 +52,10 @@ Implementazione della logica JavaScript per la modalità di selezione tramite "t
 
 ### Risultati:
 
--  Implementazione di un elemento canvas.
--  Logica JavaScript per gestire l'evento "click" (o "touch") sul canvas.
--  Algoritmo per determinare un vincitore casuale basato sul tocco.
--  Feedback visivo per indicare il vincitore.
+- Implementazione di un elemento canvas.
+- Logica JavaScript per gestire l'evento "click" (o "touch") sul canvas.
+- Algoritmo per determinare un vincitore casuale basato sul tocco.
+- Feedback visivo per indicare il vincitore.
 
 ### Strumenti:
 
@@ -73,8 +73,8 @@ Creazione di un logo accattivante e animato, integrando una GIF di Lordicon, e a
 
 ### Risultati:
 
--  Progettazione e creazione del logo "First Pick" utilizzando Canva, incorporando    una GIF animata selezionata da Lordicon.
--  Integrazione del logo animato nell'interfaccia web, assicurando la corretta visualizzazione e performance.
+- Progettazione e creazione del logo "First Pick" utilizzando Canva, incorporando una GIF animata selezionata da Lordicon.
+- Integrazione del logo animato nell'interfaccia web, assicurando la corretta visualizzazione e performance.
 
 ### Strumenti:
 
@@ -92,10 +92,10 @@ Integrazione di tutti i componenti sviluppati, test approfonditi per garantire i
 
 ### Risultati:
 
--  Integrazione dei componenti HTML, CSS e JavaScript.
--  Test funzionali per verificare la correttezza della logica di selezione in tutte e tre le modalità.
--  Test di usabilità per garantire un'esperienza utente intuitiva.
--  Formattazione del codice con Prettier per una maggiore leggibilità e coerenza.
+- Integrazione dei componenti HTML, CSS e JavaScript.
+- Test funzionali per verificare la correttezza della logica di selezione in tutte e tre le modalità.
+- Test di usabilità per garantire un'esperienza utente intuitiva.
+- Formattazione del codice con Prettier per una maggiore leggibilità e coerenza.
 
 ### Strumenti:
 
@@ -118,6 +118,6 @@ L'utilizzo di canvas per la modalità 'Tocca lo schermo' è stata una sfida part
 
 ## Link
 
-Il progetto è accessibile al seguente link: [First Pick](https://luana-giordano.github.io/FirstPick/index.html).
+Il progetto è accessibile al seguente link: <a href="https://luana-giordano.github.io/FirstPick/index.html" target="_blank">First Pick</a>
 
 #webdev #javascript #milestones #projectmanagement #learning #canva #lordicon #prettier

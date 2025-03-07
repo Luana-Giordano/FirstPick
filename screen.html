@@ -110,7 +110,9 @@
       <!-- Messaggio di errore (inizialmente vuoto) -->
       <p id="errorMessage" style="text-align: center; color: white"></p>
       <!-- Pulsante per pulire lo schermo -->
-      <button id="clearButton" class="btn btn-secondary btn-lg btn-block">Pulisci Schermo</button>
+      <div class="d-grid gap-2 col-5 mx-auto">
+      <button id="clearButton" class="btn btn-secondary btn-lg  btn-block">Pulisci Schermo</button>
+    </div>
     </div>
     <script>
       const MAX_PLAYERS = 12;
@@ -282,9 +284,9 @@
       // Funzione per avviare il countdown
       function startCountdown() {
         messageContent.textContent = "Risultato tra: ";
-        let timeLeft = 10; // Imposta il tempo iniziale
+        let timeLeft = 5; // Imposta il tempo iniziale
         timerElement.style.display = "inline"; // Mostra l'elemento timer
-        timerElement.textContent = "10"; // Imposta il testo iniziale del timer
+        timerElement.textContent = timeLeft; // Imposta il testo iniziale del timer
         gameState.timerStarted = true; // Imposta il timer come avviato
 
         // Imposta un intervallo che si ripete ogni secondo
